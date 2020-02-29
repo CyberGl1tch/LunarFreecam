@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00b46a40-a088-4cd5-be31-eeaa1e4564e5" name="Default Changelist" comment="" />
+    <list default="true" id="00b46a40-a088-4cd5-be31-eeaa1e4564e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LunarFreecam/src/lunarfreecam/utils/Lib.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LunarFreecam/src/lunarfreecame/handlers/Handlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LunarFreecam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LunarFreecam.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LunarFreecam/src/me/lunarfreecam/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/LunarFreecam/src/me/lunarfreecam/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LunarFreecam/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LunarFreecam/src/plugin.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,16 +35,68 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LunarFreecam/src/me/lunarfreecam/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#148#149#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LunarFreecam/src/lunarfreecam/utils/Lib.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#1242#1250#0" expanded="true" />
+                <element signature="e#3316#3324#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LunarFreecam/src/lunarfreecame/handlers/Handlers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#220#221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LunarFreecam/src/plugin.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,19 +105,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/LunarFreecam/out/production/LunarFreecam/plugin.yml" />
+        <option value="$PROJECT_DIR$/LunarFreecam/src/lunarfreecam/utils/Lib.java" />
+        <option value="$PROJECT_DIR$/LunarFreecam/src/lunarfreecame/handlers/Handlers.java" />
         <option value="$PROJECT_DIR$/LunarFreecam/src/me/lunarfreecam/main.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/LunarFreecam.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/artifacts/LunarFreecam_jar.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/LunarFreecam/src/plugin.yml" />
       </list>
     </option>
   </component>
@@ -97,14 +147,20 @@
               <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
               <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="me" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LunarFreecam" type="b2602c69:ProjectViewProjectNode" />
               <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
               <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="me" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LunarFreecam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
+              <item name="LunarFreecam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lunarfreecam" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -120,6 +176,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Giannis\Documents\GitHub\LunarFreecam\LunarFreecam\src" />
+      <recent name="C:\Users\Giannis\Documents\GitHub\LunarFreecam\LunarFreecam" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -156,7 +218,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="145" y="18" width="1400" height="970" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Team" sideWeight="0.50059736" side_tool="true" visible="true" weight="0.25" />
       <window_info id="Image Layers" />
@@ -206,10 +267,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LunarFreecam/src/lunarfreecam/utils/Lib.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#1242#1250#0" expanded="true" />
+            <element signature="e#3316#3324#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LunarFreecam/src/lunarfreecame/handlers/Handlers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LunarFreecam/src/me/lunarfreecam/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LunarFreecam/src/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
