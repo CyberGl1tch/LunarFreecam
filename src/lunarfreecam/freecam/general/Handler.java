@@ -11,8 +11,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class Handler implements Listener {
 	
-	private HashMap<String, Boolean> freeCamPlayers = new HashMap<String, Boolean>();
-	
 	private Main plugin;
 	
 	public Handler(Main plugin) {

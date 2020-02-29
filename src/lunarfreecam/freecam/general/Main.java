@@ -9,7 +9,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import skript.freecam.utils.SLib;
 
 public class Main extends JavaPlugin implements Listener {
-	
+
+	public HashMap<String, Boolean> freeCamPlayers = new HashMap<String, Boolean>();
+
 	public void onEnable() {
 		loadConfig();
 		new Commands(this);
