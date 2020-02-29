@@ -1,0 +1,9 @@
+name: FreeCam
+author: Skript
+main: skript.freecam.general.Main
+description: Used to make a freecam for a player.
+version: 1.0
+commands:
+  freecam:
+    usage: /<command>
+    description: Used to set the player on freecam.
