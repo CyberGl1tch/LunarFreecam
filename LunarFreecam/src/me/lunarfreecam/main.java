@@ -10,6 +10,7 @@ public class main extends JavaPlugin {
     }
 
     public void onDisable(){
+        //Main
 
     }
 }
