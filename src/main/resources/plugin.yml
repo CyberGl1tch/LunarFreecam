@@ -1,6 +1,6 @@
-name: FreeCam
-author: Skript
-main: skript.freecam.general.Main
+name: LunarFreeCam
+author: magas8
+main: lunarfreecam.freecam.general.Main
 description: Used to make a freecam for a player.
 version: 1.0
 commands:

@@ -1,1 +1,1 @@
-# LunarFreecam
+# LunarFreecam Plugin
