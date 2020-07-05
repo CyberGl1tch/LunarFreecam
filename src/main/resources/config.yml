@@ -6,7 +6,7 @@
 #    ██║     ██║   ██║██║╚██╗██║██╔══██║██╔══██╗    ██╔══╝  ██╔══██╗██╔══╝  ██╔══╝  ██║     ██╔══██║██║╚██╔╝██║  #
 #    ███████╗╚██████╔╝██║ ╚████║██║  ██║██║  ██║    ██║     ██║  ██║███████╗███████╗╚██████╗██║  ██║██║ ╚═╝ ██║  #
 #    ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝  #
-#                                          Made By CyberGhost                                                    #
+#                                          Made By Magas8                                                        #
 ##################################################################################################################
 
 
@@ -28,6 +28,8 @@ freecam-canceled: "&8&l[&c&l!&8&l] &cYour freecam canceled"
 freecam-max-distance-reach: "&8&l[&c&l!&8&l] &7You have reached the max distance of Blocks"
 freecam-reload: "&8&l[&c&l!&8&l] &7Config reloaded Successfully"
 freecam-no-use: "&8&l[&c&l!&8&l] &7You are not in freecam mode"
+freecam-money-charge: "&8&l[&2&l!&8&l] &7You have been charged &a%money%"
+freecam-no-money: "&8&l[&c&l!&8&l] &7Insufficient balance"
 on-freecam-cmd: "&8&l[&c&l!&8&l] &7This command is not allowed during FreeCam mode.             &8&l[&c&l!&8&l] &7Type &5/freecam stop &7to cancel FreeCam mode."
 ##################################################
 #                 Freecam Settings               #
@@ -37,11 +39,15 @@ freecam-period: 30
 freecam-max-distance: 120
 freecam-whitelisted-commands:
   - /freecam stop
+  - /roam stop
+##################################################
+#                   Economy                      #
+##################################################
 freecam-charge-money: false
 freecam-cost: 1000
 
 ##################################################
 #             LunarFreecam Perms                 #
 ##################################################
-# freecam.usecam Allow players to use /freecam
+# freecam.use Allow players to use /freecam
 # freecam.reload Allow Players to reload the plugin

@@ -1,9 +1,12 @@
 name: LunarFreeCam
 author: magas8
-main: lunarfreecam.freecam.general.Main
-description: Used to make a freecam for a player.
+main: lunarfreecam.freecam.Main
+description: A simple freecam plugin for all type of servers
 version: 1.0
 commands:
   freecam:
-    usage: /<command>
+    usage: /freecam
+    description: Used to set the player on freecam.
+  roam:
+    usage: /roam
     description: Used to set the player on freecam.
