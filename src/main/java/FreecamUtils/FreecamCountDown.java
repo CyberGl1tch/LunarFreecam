@@ -1,6 +1,6 @@
 package FreecamUtils;
 
-import com.cryptomorin.xseries.ActionBar;
+import com.cryptomorin.xseries.messages.ActionBar;
 import lunarfreecam.freecam.Main;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

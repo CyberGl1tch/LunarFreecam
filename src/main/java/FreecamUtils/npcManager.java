@@ -1,7 +1,7 @@
 package FreecamUtils;
 
 import com.cryptomorin.xseries.XMaterial;
-import de.tr7zw.changeme.nbtapi.NBTEntity;
+import de.tr7zw.nbtapi.NBTEntity;
 import lunarfreecam.freecam.Main;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
