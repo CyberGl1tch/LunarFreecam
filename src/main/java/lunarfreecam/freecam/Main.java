@@ -1,6 +1,9 @@
 package lunarfreecam.freecam;
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+
+import FreecamUtils.UpdateChecker;
 import FreecamUtils.npcManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -15,10 +18,15 @@ public class Main extends JavaPlugin implements Listener {
 	public static HashMap<UUID,Long> freecamcd = new HashMap<UUID, Long>();
 	public static HashMap<UUID, LivingEntity> npcalive = new HashMap<UUID, LivingEntity>();
 	private boolean isVaultEnabled;
+	public static UpdateChecker.UpdateReason updateResult = null;
+	public static String version = null;
+	public static Integer pluginID = 81104;
 
 	public void onEnable() {
 		loadConfig();
 		hook();
+		UpdateChecker.init(this,pluginID);
+		UpdateCheck();
 		new Commands(this);
 		new Handler(this);
 		new npcManager(this);
@@ -46,6 +54,14 @@ public class Main extends JavaPlugin implements Listener {
 	public boolean isVaultEnabled(){
 		return isVaultEnabled;
 	}
+	private void UpdateCheck(){
+		CompletableFuture<UpdateChecker.UpdateResult> task = UpdateChecker.get().requestUpdateCheck();
+		task.thenAccept(this::make);
+	}
 
+	private void make(UpdateChecker.UpdateResult updateResulttmp) {
+		updateResult = updateResulttmp.getReason();
+		version= updateResulttmp.getNewestVersion();
+	}
 
 }

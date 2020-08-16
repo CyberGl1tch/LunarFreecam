@@ -2,7 +2,7 @@ name: LunarFreeCam
 author: magas8
 main: lunarfreecam.freecam.Main
 description: A simple freecam plugin for all type of servers
-version: 1.0
+version: ${project.version}
 commands:
   freecam:
     usage: /freecam

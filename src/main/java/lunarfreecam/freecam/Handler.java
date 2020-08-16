@@ -2,7 +2,10 @@ package lunarfreecam.freecam;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import FreecamUtils.UpdateChecker;
 import FreecamUtils.npcManager;
+import FreecamUtils.utils;
 import com.cryptomorin.xseries.XSound;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,10 +17,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerKickEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.event.world.ChunkUnloadEvent;
 
 public class Handler implements Listener {
@@ -31,6 +31,19 @@ public class Handler implements Listener {
 		this.plugin = plugin;
 		this.npcmngr = new npcManager(plugin);
 		Bukkit.getPluginManager().registerEvents(this, plugin);
+	}
+
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent e){
+		Player player = e.getPlayer();
+		if(player.hasPermission("lunarfreecam.updates") || player.isOp()){
+			if(Main.updateResult!=null && Main.updateResult.equals(UpdateChecker.UpdateReason.NEW_UPDATE)){
+				plugin.getServer().getScheduler().runTaskLater(plugin,()->{
+					player.sendMessage(utils.Color("&8&l[&c&l!&8&l] &7LunarFreecam is outdated current version is &c"+plugin.getDescription().getVersion()+"&7 Newest version is &a"+Main.version));
+					player.sendMessage(utils.Color("&8&l[&c&l!&8&l] &7Download latest update at\n"+"&ahttps://www.spigotmc.org/resources/81104"));
+				},20);
+			}
+		}
 	}
 
 	/**
