@@ -7,16 +7,21 @@ import FreecamUtils.UpdateChecker;
 import FreecamUtils.npcManager;
 import FreecamUtils.utils;
 import com.cryptomorin.xseries.XSound;
+import jdk.nashorn.internal.ir.BlockStatement;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
 import org.bukkit.GameMode;
+import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.*;
 import org.bukkit.event.world.ChunkUnloadEvent;
 
@@ -75,6 +80,10 @@ public class Handler implements Listener {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("freecam-spectate-teleport")));
 			e.setCancelled(true);
 		}
+		if (Main.playersInFreecam.stream().anyMatch(c -> c.getLocation().getChunk().equals(e.getTo().getChunk()))){
+			e.getPlayer().sendMessage(utils.Color(plugin.getConfig().getString("freecam-tp-while-in-freecam")));
+			e.setCancelled(true);
+		}
 
 	}
 
@@ -82,7 +91,7 @@ public class Handler implements Listener {
 	 * Return player to the last location if he leaves the game!
 	 * @param e
 	 */
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerDisconnect(PlayerQuitEvent e) {
 		Player player = e.getPlayer();
 		if(Main.npcalive.containsKey(player.getUniqueId())){
@@ -99,20 +108,49 @@ public class Handler implements Listener {
 	 */
 	@EventHandler
 	public void onFreecamDamage(EntityDamageEvent e){
-
 		Entity victim = e.getEntity();
 		if(Main.npcalive.containsValue(victim)){
 			e.setCancelled(true);
 			Player player = Bukkit.getPlayer(getKey(Main.npcalive,(LivingEntity) victim));
-			npcmngr.goBack(player);
+			npcmngr.goBack(player,Commands.prevGamemode.get(player));
 		}
 	}
-
+	/**
+	 * Stop Player from Interact with inventories
+	 */
+	@EventHandler
+	public void onPlayerOpenInventory(InventoryOpenEvent e){
+		if(Main.npcalive.containsKey(e.getPlayer().getUniqueId())) {
+			if (!e.getInventory().getType().equals(InventoryType.PLAYER)) {
+				e.setCancelled(true);
+				e.getPlayer().sendMessage(utils.Color(plugin.getConfig().getString("freecam-cant-open-inv")));
+			}
+		}
+	}
+	/**
+	 * Stop Player from Interacts
+	 */
+	@EventHandler(priority = EventPriority.LOWEST)
+	public void onPlayerInteract(PlayerInteractEvent e){
+		if(Main.npcalive.containsKey(e.getPlayer().getUniqueId())) {
+			e.setCancelled(true);
+		}
+	}
+	/**
+	 * Stop Player from DropItem
+	 */
+	@EventHandler
+	public void onPlayerDropItems(PlayerDropItemEvent e){
+		if(Main.npcalive.containsKey(e.getPlayer().getUniqueId())) {
+			e.setCancelled(true);
+			e.getPlayer().sendMessage(utils.Color(plugin.getConfig().getString("freecam-cant-drop-items")));
+		}
+	}
 	/**
 	 * Return player to the last location if he leaves the game!
 	 * @param e
 	 */
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerDisconnect(PlayerKickEvent e) {
 		Player player = e.getPlayer();
 		if(Main.npcalive.containsKey(player.getUniqueId())){

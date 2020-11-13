@@ -16,6 +16,8 @@ import org.bukkit.event.Listener;
 
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.HashMap;
+
 
 public class Commands implements CommandExecutor,Listener {
 
@@ -23,6 +25,7 @@ public class Commands implements CommandExecutor,Listener {
 	private String roam = "roam";
 	private Main plugin;
 	private VaultUtils vaultUtils;
+	public static HashMap<Player,GameMode> prevGamemode = new HashMap<>();
     npcManager npcmngr = new npcManager(plugin);
 
 
@@ -56,17 +59,23 @@ public class Commands implements CommandExecutor,Listener {
 								return true;
 							}
 						}
+						if(Main.npcalive.containsKey(player.getUniqueId())){
+							player.sendMessage(utils.Color(plugin.getConfig().getString("already-freecam")));
+							return true;
+						}
 						player.playSound(player.getLocation(), XSound.ENTITY_PLAYER_LEVELUP.parseSound(),100,2);
+						prevGamemode.put(player,player.getGameMode());
 						player.setGameMode(GameMode.SPECTATOR);
 						npcmngr.createtmpNPC(player);
 						Main.freecamcd.put(player.getUniqueId(),System.currentTimeMillis());
 						BukkitTask task = new FreecamCountDown(player,plugin.getConfig().getInt("freecam-period"),plugin).runTaskTimer(plugin,0,20);
+						Main.playersInFreecam.add(player);
 						return true;
 
 					}else{
 						if(args[0].equalsIgnoreCase("stop")){
 							if(Main.npcalive.containsKey(player.getUniqueId())) {
-								npcmngr.goBack(player);
+								npcmngr.goBack(player,prevGamemode.get(player));
 								return true;
 							}else{
 								player.sendMessage(utils.Color(plugin.getConfig().getString("freecam-no-use")));

@@ -1,4 +1,5 @@
 package lunarfreecam.freecam;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -18,6 +19,7 @@ public class Main extends JavaPlugin implements Listener {
 	public static HashMap<UUID,Long> freecamcd = new HashMap<UUID, Long>();
 	public static HashMap<UUID, LivingEntity> npcalive = new HashMap<UUID, LivingEntity>();
 	private boolean isVaultEnabled;
+	public static ArrayList<Player> playersInFreecam = new ArrayList<>();
 	public static UpdateChecker.UpdateReason updateResult = null;
 	public static String version = null;
 	public static Integer pluginID = 81104;

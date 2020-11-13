@@ -23,6 +23,8 @@ maximum-distance-reached-message: '&8&l[&c&l!&8&l] &7You have reached the maximu
 no-permission-message: '&8&l[&c&l!&8&l] &7You dont have permission to use this command.'
 freecam-cooldown: "&8&l[&c&l!&8&l] &7You must wait %seconds% seconds before you do it again."
 freecam-spectate-teleport: "&8&l[&c&l!&8&l] &7You cant teleport when you are at freecam mode."
+freecam-cant-open-inv: "&8&l[&c&l!&8&l] &7You cant interact with inventories when you are on freecam mode"
+freecam-cant-drop-items: "&8&l[&c&l!&8&l] &7You cant drop items when you are on freecam mode"
 freecam-action-bar: "&8&l[&b&lFreeCam&8&l] &c&l%seconds% &8seconds left."
 freecam-canceled: "&8&l[&c&l!&8&l] &cYour freecam canceled"
 freecam-max-distance-reach: "&8&l[&c&l!&8&l] &7You have reached the max distance of Blocks"
@@ -31,11 +33,15 @@ freecam-no-use: "&8&l[&c&l!&8&l] &7You are not in freecam mode"
 freecam-money-charge: "&8&l[&2&l!&8&l] &7You have been charged &a%money%"
 freecam-no-money: "&8&l[&c&l!&8&l] &7Insufficient balance"
 on-freecam-cmd: "&8&l[&c&l!&8&l] &7This command is not allowed during FreeCam mode.             &8&l[&c&l!&8&l] &7Type &5/freecam stop &7to cancel FreeCam mode."
+already-freecam: "&8&l[&c&l!&8&l] &7You are in freecam mode!"
+freecam-tp-while-in-freecam: "&8&l[&c&l!&8&l] &7You cant tp to someone when in freecam"
 ##################################################
 #                 Freecam Settings               #
 ##################################################
 freecam-cooldown-seconds: 45
+#Use -1 for unlimited freecam period
 freecam-period: 30
+#Use -1 for unlimited freecam distance
 freecam-max-distance: 120
 freecam-whitelisted-commands:
   - /freecam stop

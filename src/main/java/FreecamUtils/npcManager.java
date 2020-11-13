@@ -2,6 +2,7 @@ package FreecamUtils;
 
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.nbtapi.NBTEntity;
+import lunarfreecam.freecam.Commands;
 import lunarfreecam.freecam.Main;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -61,11 +62,13 @@ public class npcManager {
         zombietokill.remove();
 
     }
-    public void goBack(Player player){
-        player.setGameMode(GameMode.SURVIVAL);
+    public void goBack(Player player,GameMode mode){
+        player.setGameMode(mode);
         player.teleport(Main.npcalive.get(player.getUniqueId()).getLocation());
         this.deleteNpc(player);
         Main.npcalive.remove(player.getUniqueId());
+        Commands.prevGamemode.remove(player);
+        Main.playersInFreecam.remove(player);
     }
 
 }
