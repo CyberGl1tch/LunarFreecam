@@ -80,7 +80,7 @@ public class Handler implements Listener {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("freecam-spectate-teleport")));
 			e.setCancelled(true);
 		}
-		if (Main.playersInFreecam.stream().anyMatch(c -> c.getLocation().getChunk().equals(e.getTo().getChunk()))){
+		if (!Main.playersInFreecam.contains(e.getPlayer()) && Main.playersInFreecam.stream().anyMatch(c -> c.getLocation().getChunk().equals(e.getTo().getChunk()))){
 			e.getPlayer().sendMessage(utils.Color(plugin.getConfig().getString("freecam-tp-while-in-freecam")));
 			e.setCancelled(true);
 		}
