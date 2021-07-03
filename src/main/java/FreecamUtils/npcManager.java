@@ -37,6 +37,7 @@ public class npcManager {
         zombieNBT.setByte("NoAI",(byte)1);
         zombieNBT.setByte("NoGravity",(byte)0);
         zombieNBT.setByte("CustomNameVisible",(byte)1);
+        zombieNBT.setByte("PersistenceRequired",(byte)1);
         zombie.setCustomName(p.getDisplayName());
 
         ItemStack playerhead = new ItemStack(Objects.requireNonNull(XMaterial.PLAYER_HEAD.parseMaterial()),1,(byte) 3);

@@ -30,7 +30,7 @@ public class FreecamCountDown extends BukkitRunnable {
             return;
         }
         if(plugin.getConfig().getDouble("freecam-max-distance")>0 || seconds>0) {
-            if (getDistanceBetweenEntities(player, (Entity) Main.npcalive.get(player.getUniqueId())) > plugin.getConfig().getDouble("freecam-max-distance")) {
+            if ( !((Entity)Main.npcalive.get(player.getUniqueId())).getWorld().equals(player.getWorld()) || getDistanceBetweenEntities(player, (Entity) Main.npcalive.get(player.getUniqueId())) > plugin.getConfig().getDouble("freecam-max-distance")) {
                 this.cancel();
                 npcmngr.goBack(player, mode);
                 player.sendMessage(utils.Color(plugin.getConfig().getString("freecam-max-distance-reach")));
