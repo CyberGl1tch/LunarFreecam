@@ -6,7 +6,7 @@
 
     <groupId>me.lunarfreecam</groupId>
     <artifactId>LunarFreecam</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
     <packaging>jar</packaging>
 
     <name>LunarFreecam</name>
@@ -94,7 +94,7 @@
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>8.1.0</version>
+            <version>8.3.0</version>
         </dependency>
         <dependency>
             <groupId>de.tr7zw</groupId>
