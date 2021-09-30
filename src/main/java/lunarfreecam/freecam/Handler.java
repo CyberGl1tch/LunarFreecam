@@ -76,11 +76,12 @@ public class Handler implements Listener {
 	@EventHandler
 	public void onPlayerTeleport(PlayerTeleportEvent e) {
 		Player player = e.getPlayer();
+		//Stop spectator teleport
 		if(e.getCause().equals(PlayerTeleportEvent.TeleportCause.SPECTATE) && Main.npcalive.containsKey(player.getUniqueId())){
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("freecam-spectate-teleport")));
 			e.setCancelled(true);
 		}
-		if (!Main.playersInFreecam.contains(e.getPlayer()) && Main.playersInFreecam.stream().anyMatch(c -> c.getLocation().distance(e.getTo()) < 0.1)){
+		if (!Main.playersInFreecam.contains(e.getPlayer()) && Main.playersInFreecam.stream().anyMatch(c -> c.getLocation().getWorld().equals(e.getTo().getWorld()) &&  c.getLocation().distance(e.getTo()) < 0.1)){
 			e.getPlayer().sendMessage(utils.Color(plugin.getConfig().getString("freecam-tp-while-in-freecam")));
 			e.setCancelled(true);
 		}

@@ -6,7 +6,7 @@
 
     <groupId>me.lunarfreecam</groupId>
     <artifactId>LunarFreecam</artifactId>
-    <version>1.9</version>
+    <version>1.95</version>
     <packaging>jar</packaging>
 
     <name>LunarFreecam</name>
