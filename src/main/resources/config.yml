@@ -46,6 +46,7 @@ freecam-max-distance: 120
 freecam-whitelisted-commands:
   - /freecam stop
   - /roam stop
+  - /fquit
 ##################################################
 #                   Economy                      #
 ##################################################

@@ -18,7 +18,7 @@ import java.util.HashMap;
 public class Commands implements CommandExecutor, Listener {
 
     private String freecam = "freecam";
-	private String fcm = "fcm";
+	private String fcm = "fcam";
     private String roam = "roam";
     private String fquit = "fquit";
     private Main plugin;
@@ -31,6 +31,7 @@ public class Commands implements CommandExecutor, Listener {
         plugin.getCommand(freecam).setExecutor(this);
         plugin.getCommand(roam).setExecutor(this);
         plugin.getCommand(fquit).setExecutor(this);
+        plugin.getCommand(fcm).setExecutor(this);
         vaultUtils = new VaultUtils(plugin);
     }
 
@@ -42,7 +43,6 @@ public class Commands implements CommandExecutor, Listener {
             // Handle /freecam and its alias /fcam
             if (cmd.getName().equalsIgnoreCase(freecam) || cmd.getName().equalsIgnoreCase(fcm) || cmd.getName().equalsIgnoreCase(roam) || cmd.getName().equalsIgnoreCase(fquit)) {
                 if (player.hasPermission("freecam.use") || player.isOp()) {
-
 					if (cmd.getName().equalsIgnoreCase(fquit)) {
 						if (Main.npcalive.containsKey(player.getUniqueId())) {
 							npcmngr.goBack(player, prevGamemode.get(player));
