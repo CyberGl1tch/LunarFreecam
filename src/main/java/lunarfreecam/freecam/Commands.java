@@ -18,6 +18,7 @@ import java.util.HashMap;
 public class Commands implements CommandExecutor, Listener {
 
     private String freecam = "freecam";
+	private String fcm = "fcm";
     private String roam = "roam";
     private String fquit = "fquit";
     private Main plugin;
@@ -39,8 +40,19 @@ public class Commands implements CommandExecutor, Listener {
             Player player = (Player) sender;
 
             // Handle /freecam and its alias /fcam
-            if (cmd.getName().equalsIgnoreCase(freecam) || cmd.getName().equalsIgnoreCase("fcam") || cmd.getName().equalsIgnoreCase(roam)) {
+            if (cmd.getName().equalsIgnoreCase(freecam) || cmd.getName().equalsIgnoreCase(fcm) || cmd.getName().equalsIgnoreCase(roam) || cmd.getName().equalsIgnoreCase(fquit)) {
                 if (player.hasPermission("freecam.use") || player.isOp()) {
+
+					if (cmd.getName().equalsIgnoreCase(fquit)) {
+						if (Main.npcalive.containsKey(player.getUniqueId())) {
+							npcmngr.goBack(player, prevGamemode.get(player));
+							return true;
+                        } else {
+							player.sendMessage(utils.Color(plugin.getConfig().getString("freecam-no-use")));
+                        }
+                        return true;
+                    }
+
                     if (args.length < 1) {
                         if (utils.isPlayerOnCooldown(player, Main.freecamcd, plugin.getConfig().getInt("freecam-cooldown-seconds"))) {
                             player.sendMessage(utils.Color(plugin.getConfig().getString("freecam-cooldown").replace("%seconds%", String.valueOf(utils.getCoolDownTimeRemaining(player, Main.freecamcd, plugin.getConfig().getInt("freecam-cooldown-seconds"))))));
@@ -96,15 +108,6 @@ public class Commands implements CommandExecutor, Listener {
                 }
             }
 
-            if (cmd.getName().equalsIgnoreCase(fquit)) {
-                if (Main.npcalive.containsKey(player.getUniqueId())) {
-                    npcmngr.goBack(player, prevGamemode.get(player));
-                    return true;
-                } else {
-                    player.sendMessage(utils.Color(plugin.getConfig().getString("freecam-no-use")));
-                    return true;
-                }
-            }
 
         } else {
             sender.sendMessage("&8&l[&c&l!&8&l] &7Only players can use this command!");
