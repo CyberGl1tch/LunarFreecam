@@ -57,3 +57,14 @@ freecam-cost: 1000
 ##################################################
 # freecam.use Allow players to use /freecam
 # freecam.reload Allow Players to reload the plugin
+# freecam.use.secconds.[number] Override the default freecam duration (e.g., freecam.use.secconds.120 for 2 minutes)
+# freecam.use.distance.[number] Override the default maximum distance (e.g., freecam.use.distance.100 for 100 blocks)
+#
+# Examples:
+# freecam.use.secconds.180 - Allows player to use freecam for 3 minutes
+# freecam.use.distance.50 - Allows player to go up to 50 blocks from their body
+# Note: If a player has multiple permissions, the highest value will be used
+#
+# These permissions can be used as a reward mechanic for your players!
+# Give your VIP/Donator ranks higher duration/distance as a special perk
+##################################################
