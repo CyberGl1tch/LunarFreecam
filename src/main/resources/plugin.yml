@@ -10,3 +10,9 @@ commands:
   roam:
     usage: /roam
     description: Used to set the player on freecam.
+  fcam:
+    usage: /fcam
+    description: Used to set the player on freecam.
+  fquit:
+    usage: /fquit
+    description: Used to quit Freecam to the player on freecam.
